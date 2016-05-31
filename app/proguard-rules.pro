@@ -147,6 +147,11 @@
    public void *(android.view.View);
 }
 
+#保持webview上传功能不被混淆
+-keepclassmembers class * extends android.webkit.WebChromeClient {
+    public void openFileChooser(...);
+}
+
 #保持 Parcelable 不被混淆
 -keep class * implements android.os.Parcelable {
   public static final android.os.Parcelable$Creator *;
